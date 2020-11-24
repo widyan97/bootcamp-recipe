@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script id="recipes-template" type="text/x-handlebars-template">
+        {{#each newRecipes}}
+             <div class="recipe">
+                <ul class="ingredients_list">
+                    {{#each ingredient}}
+                      <li>{{this}}</li>
+                    {{/each}}
+                  </ul>
+                 <div class="title">{{title}}</div>
+                 <img  class="thumbnail" src="{{thumbnail}}" >
+                 <a href="http://google.com/?user_id={{user.id}}">  </a>
+                 
+             </div>
+         {{/each}}
+    
+     </script>
+     <div id="search-container">
+
+    <input type="text"  id="ingredient-input">
+    <button onclick=getRecipes()>search!</button> </div>
+    <div id="recipes-container"></div>
+
+
+
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
